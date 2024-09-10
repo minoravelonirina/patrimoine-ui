@@ -1,7 +1,9 @@
 import { useState, useEffect, useCallback } from "react";
+import axios from "axios";
 import './patrimoine.css';
 import Possession from "../../models/possessions/Possession";
 import Flux from "../../models/possessions/Flux";
+import base_url from "../../../baseUrl";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -35,11 +37,8 @@ export default function Patrimoine() {
 
   const fetchPossessions = useCallback(async () => {
     try {
-      const response = await fetch('/possession');
-      if (!response.ok) {
-        throw new Error('Failed to fetch possessions');
-      }
-      const data = await response.json();
+      const response = await axios.get(`${base_url}/possession`);
+      const data = response.data;
       const filteredData = data
         .filter(item => item.model === 'Patrimoine')
         .flatMap(item => item.data.possessions);
