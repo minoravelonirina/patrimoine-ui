@@ -1,19 +1,18 @@
 import React, { useEffect, useState, useCallback, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import Possession from '../../models/possessions/Possession';
 import Flux from '../../models/possessions/Flux';
 import './list.css';
+import base_url from '../../../baseUrl';
 
 export default function List() {
   const [possessions, setPossessions] = useState([]);
 
   const fetchPossessions = useCallback(async () => {
     try {
-      const response = await fetch('/possession');
-      if (!response.ok) {
-        throw new Error('Failed to fetch possessions');
-      }
-      const data = await response.json();
+      const response = await axios.get(`${base_url}/possession`);
+      const data = response.data;
       const filteredData = data
         .filter(item => item.model === 'Patrimoine')
         .flatMap(item => item.data.possessions);
@@ -67,14 +66,10 @@ export default function List() {
 
   const handleClose = async (libelle) => {
     try {
-      const response = await fetch(`/possession/${libelle}/close`, {
-        method: 'PATCH',
+      const response = await axios.patch(`${base_url}/possession/${libelle}/close`, {}, {
         headers: {'Content-Type': 'application/json'},
       });
-      if (!response.ok) {
-        throw new Error('Failed to close possession');
-      }
-      const result = await response.json();
+      const result = response.data;
       alert(result.message);
       fetchPossessions();
     } catch (error) {
@@ -94,7 +89,6 @@ export default function List() {
       </button>
     </div>
   );
-
 
   const sommeValeursActuelles = useMemo(() => {
     return possessions.reduce((sum, possession) => sum + possession.valeurActuelle, 0);
@@ -130,7 +124,7 @@ export default function List() {
       </table>
       <div className="somme-valeurs">
         <strong>La valeur du Patrimoine actuelle est : </strong>
-        <span style={{color:"yellowgreen", fontWeight:"bold"}}>{  Math.round(sommeValeursActuelles)}</span>
+        <span style={{color:"yellowgreen", fontWeight:"bold"}}>{Math.round(sommeValeursActuelles)}</span>
       </div>
     </div>
   );
