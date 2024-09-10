@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './createPossession.css'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
-import base_url from '../../../baseUrl';
+import base_url from '../../baseUrl';
 
 export default function CreatePossession() {
   const navigate = useNavigate();
