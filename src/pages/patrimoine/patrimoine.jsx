@@ -3,7 +3,7 @@ import axios from "axios";
 import './patrimoine.css';
 import Possession from "../../models/possessions/Possession";
 import Flux from "../../models/possessions/Flux";
-import base_url from "../../../baseUrl";
+import base_url from "../../baseUrl";
 import {
   Chart as ChartJS,
   CategoryScale,
