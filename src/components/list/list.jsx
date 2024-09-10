@@ -4,7 +4,7 @@ import axios from 'axios';
 import Possession from '../../models/possessions/Possession';
 import Flux from '../../models/possessions/Flux';
 import './list.css';
-import base_url from '../../../baseUrl';
+import base_url from '../baseUrl';
 
 export default function List() {
   const [possessions, setPossessions] = useState([]);
