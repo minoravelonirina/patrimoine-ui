@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './update.css';
-import base_url from '../../../baseUrl';
+import base_url from '../../baseUrl';
 
 export default function UpdatePossession() {
   const [newLibelle, setNewLibelle] = useState('');
