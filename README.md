@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# Patrimoine UI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Interface web de suivi de patrimoine personnel, permettant de centraliser et gérer ses actifs et biens financiers.
 
-## Available Scripts
+## 📖 Description
 
-In the project directory, you can run:
+**Patrimoine UI** est une application front-end développée en React permettant à un utilisateur de suivre l'évolution de son patrimoine personnel : actifs, biens et valeurs. L'application communique avec une API back-end pour la persistance et la gestion des données.
 
-### `npm start`
+## ✨ Fonctionnalités
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 📋 Lister l'ensemble des actifs et biens enregistrés
+- ➕ Ajouter un nouvel actif au patrimoine
+- ✏️ Modifier les informations d'un actif existant
+- 🗑️ Supprimer un actif
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Technologies
 
-### `npm test`
+- **Langage** : JavaScript
+- **Framework** : React (Create React App)
+- **Style** : CSS
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 📋 Prérequis
 
-### `npm run build`
+- Node.js 16+
+- npm
+- Une instance de l'API back-end accessible (URL à configurer)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🚀 Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clonez le dépôt :
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+git clone https://github.com/minoravelonirina/patrimoine-ui.git
+cd patrimoine-ui
+```
 
-### `npm run eject`
+2. Installez les dépendances :
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Configurez l'URL de l'API dans `baseUrl.js` :
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```js
+export const BASE_URL = "http://localhost:PORT/api";
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. Lancez l'application en mode développement :
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+L'application est accessible sur `http://localhost:3000`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📦 Build de production
 
-### Code Splitting
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Génère une version optimisée de l'application dans le dossier `build/`, prête à être déployée.
 
-### Analyzing the Bundle Size
+## 🤝 Contribution
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Les contributions sont les bienvenues ! N'hésitez pas à :
+- Signaler des bugs
+- Proposer des améliorations
+- Soumettre des pull requests
 
-### Making a Progressive Web App
+## 👤 Auteur
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Développé par [Minosoa RAVELONIRINA](https://github.com/minoravelonirina)
